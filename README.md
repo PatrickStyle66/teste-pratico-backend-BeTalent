@@ -14,8 +14,8 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 ## To-Do List
 
 ### Implementação do Banco de dados
-- [ ] Model e Migration de users
-- [ ] Model e Migration de clients
+- [x] Model e Migration de users
+- [x] Model e Migration de clients
 - [ ] Model e Migration de products
 - [ ] Model e Migration de gateways
 - [ ] Model e Migration de transactions
