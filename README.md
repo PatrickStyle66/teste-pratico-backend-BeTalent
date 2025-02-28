@@ -16,18 +16,20 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 ### Implementação do Banco de dados
 - [x] Model e Migration de users
 - [x] Model e Migration de clients
-- [ ] Model e Migration de products
-- [ ] Model e Migration de gateways
-- [ ] Model e Migration de transactions
-- [ ] Model e Migration de transaction_products
+- [x] Model e Migration de products
+- [x] Model e Migration de gateways
+- [x] Model e Migration de transactions
+- [x] Model e Migration de transaction_products
 
 ### Implementação do gateway 1
+- [ ]  CRUD de Users
 - [ ]  Rota POST /login
 - [ ]  Rota GET /transactions
 - [ ]  Rota POST /transactions
 - [ ]  Rota POST /transactions/:id/charge_back
 
 ### Implementação do gateway 2
+- [ ]  CRUD de Users
 - [ ]  Rota GET /transacoes
 - [ ]  Rota POST /transacoes
 - [ ]  Rota POST /transacoes/reembolso
