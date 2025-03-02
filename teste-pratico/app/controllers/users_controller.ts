@@ -10,9 +10,9 @@ export default class UsersController {
    * Display form to create a new record
    */
   async store({ request }: HttpContext) {
-    const { email, password } = request.body()
-    console.log(email, password)
+    const { name, email, password } = request.body()
     const user = await User.create({ email, password })
+    await user.related('client').create({ name, email })
     return user
   }
 
