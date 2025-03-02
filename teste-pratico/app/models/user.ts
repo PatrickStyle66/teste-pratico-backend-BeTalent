@@ -16,10 +16,11 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @column({ isPrimary: true })
   declare id: number
 
-  @hasOne(() => Client, {
-    foreignKey: 'clientEmail',
-  })
-  declare email: HasOne<typeof Client>
+  @column()
+  declare email: string
+
+  @hasOne(() => Client)
+  declare client: HasOne<typeof Client>
 
   @column({ serializeAs: null })
   declare password: string

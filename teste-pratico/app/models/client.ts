@@ -16,6 +16,9 @@ export default class Client extends BaseModel {
   @hasMany(() => Transaction)
   declare transaction: HasMany<typeof Transaction>
 
+  @column()
+  declare userId: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
