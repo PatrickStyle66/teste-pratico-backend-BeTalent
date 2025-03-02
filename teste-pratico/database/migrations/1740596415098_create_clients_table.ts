@@ -8,6 +8,14 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('name').notNullable()
       table
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
+      table
         .string('email')
         .notNullable()
         .references('email')
