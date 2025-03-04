@@ -1,0 +1,19 @@
+services:
+ mysql-db:
+    image: mysql:latest
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABSE: practical-test
+      MYSQL_PASSWORD: 12345
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - 3333:3306
+    expose:
+      - 3306
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
