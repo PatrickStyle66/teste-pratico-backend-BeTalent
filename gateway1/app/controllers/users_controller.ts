@@ -49,5 +49,13 @@ export default class UsersController {
   /**
    * Delete record
    */
-  async destroy({ params }: HttpContext) {}
+  async destroy({ params, response }: HttpContext) {
+    try {
+      const user = await User.findByOrFail('id', params.id)
+      await user.delete()
+      return response.status(203)
+    } catch (error) {
+      return response.status(400).json({ error: 'User not found' })
+    }
+  }
 }
