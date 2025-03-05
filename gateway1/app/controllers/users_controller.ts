@@ -1,5 +1,5 @@
 import User from '#models/user'
-import { createUserValidator } from '#validators/user'
+import { createUserValidator, updateUserValidator } from '#validators/user'
 import type { HttpContext } from '@adonisjs/core/http'
 export default class UsersController {
   /**
@@ -20,13 +20,31 @@ export default class UsersController {
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {}
+  async show({ params, response }: HttpContext) {
+    try {
+      const user = await User.findByOrFail('id', params.id)
+      await user.load('client')
+      return user
+    } catch (error) {
+      return response.status(400).json({ error: 'User not found' })
+    }
+  }
 
   /**
    * Edit individual record
    */
 
-  async update({ params, request }: HttpContext) {}
+  async update({ params, request, auth, response }: HttpContext) {
+    const wantedUser = await User.findBy('id', params.id)
+    const user = auth.user!
+    if (user.id !== wantedUser!.id) {
+      return response.status(401).json({ error: 'Unauthorized' })
+    }
+    const { email, password } = await request.validateUsing(updateUserValidator)
+    wantedUser!.merge({ email, password })
+    await wantedUser!.save()
+    return wantedUser
+  }
 
   /**
    * Delete record
