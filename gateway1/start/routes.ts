@@ -14,5 +14,6 @@ router
   .group(() => {
     router.get('user/:id', [UsersController, 'show'])
     router.put('user/:id', [UsersController, 'update'])
+    router.delete('user/:id', [UsersController, 'destroy'])
   })
   .use(middleware.auth())
