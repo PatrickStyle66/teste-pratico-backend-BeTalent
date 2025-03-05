@@ -5,7 +5,10 @@ export default class UsersController {
   /**
    * Display a list of resource
    */
-  async index({}: HttpContext) {}
+  async index() {
+    const users = await User.query().preload('client')
+    return users
+  }
 
   /**
    * Display form to create a new record
