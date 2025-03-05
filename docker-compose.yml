@@ -1,5 +1,25 @@
 services:
- mysql-db:
+  backend:
+    container_name: gateway1
+    build:
+      context: ./gateway1
+      dockerfile: dockerfile
+    environment:
+      APP_PORT: 3001
+      APP_URL: http://localhost:3001
+      DATABASE: sys
+      DATABASE_HOST: mysql-db
+      DATABASE_PORT: 3306
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: 12345
+    ports:
+      - 3001:3001
+    depends_on:
+      - mysql-db
+    command: npm run dev
+    volumes:
+      - ./backend:/data/app
+  mysql-db:
     image: mysql:latest
     container_name: mysql-db
     restart: always
