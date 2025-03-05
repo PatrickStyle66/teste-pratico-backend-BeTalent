@@ -15,5 +15,6 @@ router
     router.get('user/:id', [UsersController, 'show'])
     router.put('user/:id', [UsersController, 'update'])
     router.delete('user/:id', [UsersController, 'destroy'])
+    router.get('user', [UsersController, 'index'])
   })
   .use(middleware.auth())
