@@ -37,6 +37,8 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 - [ ]  Rota GET /transactions
 - [ ]  Rota POST /transactions
 - [ ]  Rota POST /transactions/:id/charge_back
+- [x]  Validação de dados
+- [x]  Seeds de usuários com roles  
 - [x]  Dockerização da aplicação
 ### Implementação do gateway 2
 - [ ]  CRUD de Users
