@@ -2,6 +2,7 @@ const UsersController = () => import('#controllers/users_controller')
 const SessionController = () => import('#controllers/session_controller')
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
+const GatewaysController = () => import('#controllers/gateways_controller')
 const ProductsController = () => import('#controllers/products_controller')
 
 router.get('/', async () => {
@@ -19,5 +20,6 @@ router
     router.get('user', [UsersController, 'index'])
     router.resource('product', ProductsController)
     router.put('user/:id/role', [UsersController, 'role'])
+    router.resource('gateway', GatewaysController)
   })
   .use(middleware.auth())
