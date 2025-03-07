@@ -18,5 +18,6 @@ router
     router.delete('user/:id', [UsersController, 'destroy'])
     router.get('user', [UsersController, 'index'])
     router.resource('product', ProductsController)
+    router.put('user/:id/role', [UsersController, 'role'])
   })
   .use(middleware.auth())
