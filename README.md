@@ -27,6 +27,7 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 - [x] Model e Migration de gateways
 - [x] Model e Migration de transactions
 - [x] Model e Migration de transaction_products
+- [x] Dockerização do banco de dados
 
 ### Implementação do gateway 1
 - [x]  CRUD de Users
