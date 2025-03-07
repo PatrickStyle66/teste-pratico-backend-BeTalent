@@ -7,11 +7,18 @@ Trata-se de um sistema gerenciador de pagamentos multi-gateway. Ao realizar uma 
 
 Deve ser levada em consideração a facilidade de adicionar novos gateways de forma simples e modular na API, no futuro.
 
-### Nível 1 de implementação
+### Nível 1 de implementação (com roles)
 - Valor da compra vem direto pela API
 - Gateways sem autenticação
-
+- roles
+  - ADMIN - Faz tudo
+  - MANAGER - pode gerenciar produtos e usuários
+  - FINANCE - pode gerenciar produtos e realizar reembolso
+  - USER - pode o resto que não foi citado
 ## To-Do List
+
+### Integração entre gateways 
+- [ ] Redirecionamento em caso de inatividade
 
 ### Implementação do Banco de dados
 - [x] Model e Migration de users
@@ -22,12 +29,15 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 - [x] Model e Migration de transaction_products
 
 ### Implementação do gateway 1
-- [ ]  CRUD de Users
-- [ ]  Rota POST /login
+- [x]  CRUD de Users
+- [x]  CRUD de Products
+- [x]  Rota POST /login
+- [x]  Autenticação de rotas
+- [x]  Autorização de rotas
 - [ ]  Rota GET /transactions
 - [ ]  Rota POST /transactions
 - [ ]  Rota POST /transactions/:id/charge_back
-
+- [x]  Dockerização da aplicação
 ### Implementação do gateway 2
 - [ ]  CRUD de Users
 - [ ]  Rota GET /transacoes
