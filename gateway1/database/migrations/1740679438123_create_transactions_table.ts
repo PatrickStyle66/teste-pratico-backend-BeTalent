@@ -25,7 +25,7 @@ export default class extends BaseSchema {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table.integer('external_id').nullable()
-      table.boolean('status').notNullable()
+      table.string('status').notNullable().defaultTo('done')
       table.integer('amount').notNullable()
       table.integer('card_last_numbers').notNullable()
     })
