@@ -16,10 +16,10 @@ export default class Transaction extends BaseModel {
   declare client: BelongsTo<typeof Client>
 
   @hasOne(() => Gateway)
-  declare gateway_id: HasOne<typeof Gateway>
+  declare gatewayId: HasOne<typeof Gateway>
 
   @column()
-  declare external_id: number | null
+  declare externalId: number | null
 
   @column()
   declare status: string
@@ -28,7 +28,7 @@ export default class Transaction extends BaseModel {
   declare amount: number
 
   @column()
-  declare card_last_numbers: number
+  declare cardLastNumbers: string
 
   @manyToMany(() => Product, {
     pivotColumns: ['quantity'],
