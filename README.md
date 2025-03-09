@@ -46,3 +46,6 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 - [ ]  Rota GET /transacoes
 - [ ]  Rota POST /transacoes
 - [ ]  Rota POST /transacoes/reembolso
+
+### Estrutura do banco de dados
+![Image](https://github.com/user-attachments/assets/b489f8ec-e7df-4459-8f80-981866debb14)
