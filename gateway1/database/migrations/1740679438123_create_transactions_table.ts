@@ -27,7 +27,7 @@ export default class extends BaseSchema {
       table.integer('external_id').nullable()
       table.string('status').notNullable().defaultTo('done')
       table.integer('amount').notNullable()
-      table.integer('card_last_numbers').notNullable()
+      table.string('card_last_numbers').notNullable()
     })
   }
 
