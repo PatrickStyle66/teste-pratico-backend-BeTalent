@@ -15,8 +15,8 @@ export default class Transaction extends BaseModel {
   @belongsTo(() => Client)
   declare client: BelongsTo<typeof Client>
 
-  @hasOne(() => Gateway)
-  declare gatewayId: HasOne<typeof Gateway>
+  @column()
+  declare gatewayId: number
 
   @column()
   declare externalId: number | null
@@ -31,7 +31,7 @@ export default class Transaction extends BaseModel {
   declare cardLastNumbers: string
 
   @manyToMany(() => Product, {
-    pivotColumns: ['quantity'],
+    pivotTable: 'transaction_products',
   })
   declare products: ManyToMany<typeof Product>
   @column.dateTime({ autoCreate: true })
