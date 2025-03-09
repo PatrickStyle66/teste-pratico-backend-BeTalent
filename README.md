@@ -35,8 +35,8 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 - [x]  Rota POST /login
 - [x]  Autenticação de rotas
 - [x]  Autorização de rotas
-- [ ]  Rota GET /transactions
-- [ ]  Rota POST /transactions
+- [x]  Rota GET /transactions
+- [x]  Rota POST /transactions
 - [ ]  Rota POST /transactions/:id/charge_back
 - [x]  Validação de dados
 - [x]  Seeds de usuários com roles  
@@ -49,3 +49,6 @@ Deve ser levada em consideração a facilidade de adicionar novos gateways de fo
 
 ### Estrutura do banco de dados
 ![Image](https://github.com/user-attachments/assets/b489f8ec-e7df-4459-8f80-981866debb14)
+
+### Rotas
+
