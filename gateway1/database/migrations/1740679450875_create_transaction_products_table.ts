@@ -11,7 +11,7 @@ export default class extends BaseSchema {
         .notNullable()
         .unsigned()
         .references('id')
-        .inTable('products')
+        .inTable('transactions')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table
@@ -19,11 +19,10 @@ export default class extends BaseSchema {
         .notNullable()
         .unsigned()
         .references('id')
-        .inTable('transactions')
+        .inTable('products')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
 
-      table.integer('quantity').notNullable()
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })
